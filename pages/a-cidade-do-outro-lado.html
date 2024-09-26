@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YBYMARÃ - A Cidade do Outro Lado</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+  <style>
+    .bg-primary {
+      background-color: #6B88B7;
+    }
+    .text-primary {
+      color: #6B88B7;
+    }
+    .bg-secondary {
+      background-color: #E5E8F1;
+    }
+    .text-secondary {
+      color: #405983;
+    }
+
+    .hamburger {
+      cursor: pointer;
+      display: block;
+      width: 30px;
+      height: 22px;
+      position: relative;
+    }
+
+    .hamburger div {
+      background-color: white;
+      height: 4px;
+      width: 100%;
+      position: absolute;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger div:nth-child(1) {
+      top: 0;
+    }
+
+    .hamburger div:nth-child(2) {
+      top: 9px;
+    }
+
+    .hamburger div:nth-child(3) {
+      top: 18px;
+    }
+
+    .menu-open .hamburger div:nth-child(1) {
+      transform: rotate(45deg);
+      top: 9px;
+    }
+
+    .menu-open .hamburger div:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-open .hamburger div:nth-child(3) {
+      transform: rotate(-45deg);
+      top: 9px;
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+    .menu-open .mobile-menu {
+      display: block;
+    }
+    .full-width-image {
+      width: 100vw;
+      height: auto;
+      margin-left: calc(50% - 50vw);
+    }
+  </style>
+</head>
+<body class="bg-secondary text-gray-800">
+  <header class="bg-primary py-4 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center pr-6 pl-6">
+      <h1 class="text-3xl font-bold text-white">YBYMARÃ</h1>
+      <!-- Menu para Desktop -->
+      <nav class="hidden md:flex space-x-4">
+        <a href="/" class="hover:text-secondary text-white">Inicio</a>
+        <a href="/pages/sobre-mim.html" class="hover:text-secondary text-white">Sobre mim</a>
+        <a href="#contact" class="hover:text-secondary text-white">Contato</a>
+      </nav>
+
+      <!-- Menu Hamburguer para Mobile -->
+      <div class="md:hidden">
+        <div class="hamburger" id="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu bg-primary text-white text-center p-4 md:hidden">
+      <a href="/" class="block py-2 hover:text-secondary">Inicio</a>
+      <a href="/pages/sobre-mim.html" class="block py-2 hover:text-secondary">Sobre mim</a>
+      <a href="#contact" class="block py-2 hover:text-secondary">Contato</a>
+    </div>
+  </header>
+
+  <!-- Seção de imagem com largura total -->
+  <section class="text-center">
+    <img src="/assets/a-cidade-do-outro-lado.png" alt="Capa do Livro 1" class="full-width-image mb-8">
+  </section>
+
+  <section class="container mx-auto py-16 text-center">
+    <h2 class="text-3xl font-bold mb-6 text-primary">Sinopse</h2>
+    <p class="text-gray-600 mb-8 p-3">
+      Uma família estava voltando de viagem quando passa por um evento estranho e, de repente, se encontra em uma cidade cuja cultura é bem diferente de tudo o que há em nosso mundo. Política, economia, ecologia, identidade de gênero, dentre outros, são tratados de forma diferente. Homens e mulheres são realmente iguais em todos os aspectos socioculturais. Como esperado, eles têm muita dificuldade em se adaptar ali. Mas, lentamente, vão superando as diferenças e adotando a cidade como novo lar.
+    </p>
+    
+    <!-- Botões de Ação -->
+    <div class="flex justify-center space-x-4">
+      <!-- Botão para acessar o blog com ícone do Blogger -->
+      <a href="https://ybymara2020.blogspot.com/" target="_blank" class="bg-primary text-white px-4 py-2 rounded hover:bg-secondary hover:text-primary transition duration-300 flex items-center space-x-2">
+        <i class="fab fa-blogger"></i>
+        <span>Acesse o Blog</span>
+      </a>
+
+      <!-- Botão para acessar o e-book na Amazon com ícone da Amazon -->
+      <a href="https://www.amazon.com.br/Ybymar%C3%A3-Cidade-do-Outro-Lado-ebook/dp/B0C68R8J6R" target="_blank" class="bg-primary text-white px-4 py-2 rounded hover:bg-secondary hover:text-primary transition duration-300 flex items-center space-x-2">
+        <i class="fab fa-amazon"></i>
+        <span>Leia na Amazon</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Formulário de Contato -->
+  <section id="contact" class="container mx-auto py-16">
+    <h3 class="text-3xl font-bold mb-8 text-primary text-center">Entre em Contato</h3>
+    <form id="contactForm" class="bg-white p-8 rounded-lg shadow-lg max-w-md mx-auto">
+      <div class="mb-4">
+        <label for="name" class="block text-gray-600">Nome</label>
+        <input type="text" id="name" class="w-full p-2 rounded bg-secondary focus:outline-none text-gray-800" required />
+      </div>
+      <div class="mb-4">
+        <label for="message" class="block text-gray-600">Mensagem</label>
+        <textarea id="message" class="w-full p-2 rounded bg-secondary focus:outline-none text-gray-800" required></textarea>
+      </div>
+      <button type="submit" class="bg-primary text-white px-4 py-2 rounded hover:bg-secondary hover:text-primary transition duration-300">Enviar</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-primary py-6 mt-16 text-center text-white">
+    <p>© 2024 Ybymara. Todos os direitos reservados.</p>
+  </footer>
+
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+
+    // Inicializando o EmailJS com seu User ID
+    (function(){
+      emailjs.init({
+        publicKey: "QlnVJjAxa9Q-ldJlE",
+      });
+    })();
+  
+
+    // Script para controlar o menu hamburguer
+    const hamburger = document.getElementById("hamburger");
+    const body = document.body;
+
+    hamburger.addEventListener("click", function() {
+      body.classList.toggle("menu-open");
+    });
+
+    // Capturar o envio do formulário de contato e enviar o email
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Impede o comportamento padrão do envio do formulário
+
+    // Obter os valores dos campos do formulário
+    const name = document.getElementById("name").value;
+    const message = document.getElementById("message").value;
+
+    // Enviar o email usando EmailJS
+    emailjs.send("service_jyn2x5o", "ybymara_yv1lkla", {
+      from_name: name,
+      message: message
+    })
+    .then(function(response) {
+      alert("Mensagem enviada com sucesso!");
+      document.getElementById("contactForm").reset();
+    }, function(error) {
+      alert("Ocorreu um erro ao enviar a mensagem. Tente novamente.");
+    });
+  });
+  </script>
+</body>
+</html>
